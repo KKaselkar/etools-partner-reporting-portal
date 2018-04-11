@@ -110,7 +110,7 @@
       .show-more-details .justify-right {
         float: right;
       }
-      
+
       .header h2 {
         @apply(--paper-font-title);
         margin: 0;
@@ -130,7 +130,7 @@
         padding: 15px;
         background: var(--paper-grey-200);
       }
-      
+
       .details-text {
         font-size: 12px;
         color: #757575;
@@ -149,7 +149,7 @@
         display: none !important;
       }
 
-      
+
       paper-radio-group {
         display: block;
         padding-top: 16px;
@@ -157,7 +157,7 @@
 
       paper-radio-group > .fields {
         padding: calc(var(--app-grid-gutter) / 2) 0;
-      } 
+      }
 
       paper-radio-group > .fields[empty] {
         padding: 0;
@@ -312,7 +312,7 @@
                 <div class="item full-width infobox">
                   <span class="item">
                     <h4>Basic Project details</h4>
-                  </span>  
+                  </span>
                   <span class="item justify-right">
                     <div class="red">*</div>
                     <h4>Fields required</h4>
@@ -629,16 +629,16 @@
             <paper-button class="btn-primary" on-tap="_save" raised>
               Save
             </paper-button>
-    
+
             <paper-button  on-tap="close">
               Cancel
             </paper-button>
           </div>
-    
+
           <etools-loading active="[[updatePending]]"></etools-loading>
 
 
-                
+
               </div>
             </template>
           </div>
@@ -646,7 +646,7 @@
       </template>
     </paper-dialog-scrollable>
 
-      
+
     </paper-dialog>
   </template>
 
@@ -782,7 +782,7 @@
           computed: '_computeImoClusters(profile)',
         },
 
-        selectedClusters: { 
+        selectedClusters: {
           type: Array,
         },
 
@@ -809,7 +809,7 @@
       ],
 
       _computeUrl: function(responsePlanID, mode) {
-        if (mode === 'custom') { 
+        if (mode === 'custom') {
         return App.Endpoints.partnerProjectCreate(responsePlanID)
         } else {return App.Endpoints.ochaProjectsList(responsePlanID)}
       },
@@ -843,7 +843,7 @@
       _handleDetailsChange: function () {
         this.detailsOpened = !this.detailsOpened;
       },
-      
+
       _toggleShowMoreDetails: function() {
         this.detailsOpened ? this.detailsOpened = false : this.detailsOpened = true
       },
@@ -918,7 +918,7 @@
             self.set('projectDetailsLoading', false);
             // TODO: error handling
           });
-      },      
+      },
 
       _computeFormattedProjects: function(projects) {
         return projects.map(function(project) {
@@ -1010,7 +1010,7 @@
 
         this.updatePending = true;
         var thunk = this.$.projectAjax.thunk();
-        
+
         thunk()
           .then(function (res) {
             self.updatePending = false;
